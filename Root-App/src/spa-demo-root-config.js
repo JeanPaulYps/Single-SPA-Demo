@@ -6,6 +6,13 @@ registerApplication({
   activeWhen: ["/"],
 });
 
+registerApplication({
+  name: "@spa-demo/vue-demo",
+  app: () => System.import("@spa-demo/vue-demo"),
+  activeWhen: ["/vue"],
+});
+
+
 start({
   urlRerouteOnly: true,
 });
