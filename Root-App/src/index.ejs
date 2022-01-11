@@ -74,7 +74,16 @@
     You need to enable JavaScript to run this app.
   </noscript>
   <main></main>
- 
+  <script>
+    System.import('@spa-demo/root-config');
+    singleSpa.registerApplication(
+      '@spa-demo/demo',
+      () => System.import('@spa-demo/demo'),
+      location => location.pathname.startsWith('/')
+    );
+
+    singleSpa.start();
+  </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
 
